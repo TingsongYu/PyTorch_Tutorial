@@ -23,6 +23,6 @@ https://pytorch.org/get-started/locally/
 
 
 # 3.问题反馈
-若发现任何问题、bug和改进意见，请您随时联系我，以进行改进。<br/>
+若发现任何问题、bug和改进意见，请您随时联系我。<br/>
 联系方式：yts3221@126.com<br/>
 读者qq群：671103375
