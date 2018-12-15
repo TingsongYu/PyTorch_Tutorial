@@ -12,7 +12,7 @@
 # 2.环境配置
 代码在以下两种环境测试过：<br/>
 1. win10 64位 + python3.5 + pytorch==0.4.0 <br/>
-2. mac + python3.6 + pytorch==0.4.1 <br/>
+2. mac + python3.6 + pytorch==0.4.1/ pytorch==1.0.0 <br/>
 
 **第一步 安装各依赖包：**<br/>
 pip install -r requirements.txt
