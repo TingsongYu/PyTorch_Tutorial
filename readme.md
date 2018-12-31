@@ -6,7 +6,6 @@
 《Pytorch模型训练实用教程》可通过如下方式获取：<br/>
 1. https://github.com/tensor-yu/PyTorch_Tutorial/tree/master/Data<br/>
 2. QQ群：671103375<br/>
-3. 链接: https://pan.baidu.com/s/11hvPGusAopXNwuCsuLilCA   提取码: anw5<br/>
 
 
 # 2.环境配置
