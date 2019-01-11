@@ -16,9 +16,8 @@ Train = False   # 不解压训练集，仅解压测试集
 
 # 解压缩，返回解压后的字典
 def unpickle(file):
-    fo = open(file, 'rb')
-    dict_ = pickle.load(fo, encoding='bytes')
-    fo.close()
+    with open(file, 'rb') as fo:
+        dict_ = pickle.load(fo, encoding='bytes')
     return dict_
 
 def my_mkdir(my_dir):
