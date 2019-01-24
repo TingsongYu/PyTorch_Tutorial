@@ -32,6 +32,7 @@ with open(train_txt_path, 'r') as f:
         imgs = np.concatenate((imgs, img), axis=3)
         print(i)
 
+imgs = np.delete(imgs, 0, axis=3)
 imgs = imgs.astype(np.float32)/255.
 
 
