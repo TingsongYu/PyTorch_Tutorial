@@ -15,8 +15,8 @@ from utils.utils import MyDataset, validate, show_confMat
 from tensorboardX import SummaryWriter
 from datetime import datetime
 
-train_txt_path = '../../Data/train.txt'
-valid_txt_path = '../../Data/valid.txt'
+train_txt_path = os.path.join("..", "..", "Data", "train.txt")
+valid_txt_path = os.path.join("..", "..", "Data", "valid.txt")
 
 classes_name = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
@@ -26,7 +26,7 @@ lr_init = 0.001
 max_epoch = 1
 
 # log
-result_dir = '../../Result/'
+result_dir = os.path.join("..", "..", "Result")
 
 now_time = datetime.now()
 time_str = datetime.strftime(now_time, '%m-%d_%H-%M-%S')

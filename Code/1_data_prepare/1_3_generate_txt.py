@@ -4,11 +4,11 @@ import os
     为数据集生成对应的txt文件
 '''
 
-train_txt_path = '../../Data/train.txt'
-train_dir = '../../Data/train/'
+train_txt_path = os.path.join("..", "..", "Data", "train.txt")
+train_dir = os.path.join("..", "..", "Data", "train")
 
-valid_txt_path = '../../Data/valid.txt'
-valid_dir = '../../Data/valid/'
+valid_txt_path = os.path.join("..", "..", "Data", "valid.txt")
+valid_dir = os.path.join("..", "..", "Data", "valid")
 
 
 def gen_txt(txt_path, img_dir):
@@ -31,3 +31,4 @@ def gen_txt(txt_path, img_dir):
 if __name__ == '__main__':
     gen_txt(train_txt_path, train_dir)
     gen_txt(valid_txt_path, valid_dir)
+

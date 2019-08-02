@@ -130,9 +130,9 @@ def gen_cam(feature_map, grads):
 if __name__ == '__main__':
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    path_img = os.path.join(BASE_DIR, "..", "..", "Data/cam_img/", "test_img_8.png")
-    path_net = os.path.join(BASE_DIR, "..", "..", "Data/", "net_params_72p.pkl")
-    output_dir = os.path.join(BASE_DIR, "..", "..", "Result/backward_hook_cam/")
+    path_img = os.path.join(BASE_DIR, "..", "..", "Data", "cam_img", "test_img_8.png")
+    path_net = os.path.join(BASE_DIR, "..", "..", "Data", "net_params_72p.pkl")
+    output_dir = os.path.join(BASE_DIR, "..", "..", "Result", "backward_hook_cam")
 
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
     fmap_block = list()

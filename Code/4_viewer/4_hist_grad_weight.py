@@ -9,13 +9,14 @@ from torch.autograd import Variable
 import torch.nn as nn
 import torch.optim as optim
 import sys
+import os
 sys.path.append("..")
 from utils.utils import MyDataset, validate, show_confMat, Net
 from tensorboardX import SummaryWriter
 from datetime import datetime
 
-train_txt_path = '../../Data/train.txt'
-valid_txt_path = '../../Data/valid.txt'
+train_txt_path = os.path.join("..", "..", "Data", "train.txt")
+valid_txt_path = os.path.join("..", "..", "Data", "valid.txt")
 
 classes_name = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
@@ -25,7 +26,7 @@ lr_init = 0.001
 max_epoch = 1
 
 # log
-log_dir = '../../Result/hist_grad_weight'
+log_dir = os.path.join("..", "..", "Result", "hist_grad_weight")
 
 writer = SummaryWriter(log_dir=log_dir)
 

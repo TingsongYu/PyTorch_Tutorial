@@ -1,4 +1,5 @@
 # coding: utf-8
+import os
 import torch
 import torchvision.utils as vutils
 import numpy as np
@@ -12,9 +13,9 @@ from torch.utils.data import DataLoader
 
 
 vis_layer = 'conv1'
-log_dir = '../../Result/visual_featuremaps'
-txt_path = '../../Data/visual.txt'
-pretrained_path = '../../Data/net_params_72p.pkl'
+log_dir = os.path.join("..", ".." "Result", "visual_featuremaps")
+txt_path = os.path.join("..", "..", "Data", "visual.txt")
+pretrained_path = os.path.join("..", "..", "Data", "net_params_72p.pkl")
 
 net = Net()
 pretrained_dict = torch.load(pretrained_path)

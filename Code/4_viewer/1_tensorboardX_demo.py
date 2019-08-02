@@ -1,4 +1,5 @@
 # coding: utf-8
+import os
 import torch
 import torchvision.utils as vutils
 import numpy as np
@@ -7,7 +8,7 @@ from torchvision import datasets
 from tensorboardX import SummaryWriter
 
 resnet18 = models.resnet18(False)
-writer = SummaryWriter('../../Result/runs')
+writer = SummaryWriter(os.path.join("..", "..", "Result", "runs"))
 sample_rate = 44100
 freqs = [262, 294, 330, 349, 392, 440, 440, 440, 440, 440, 440]
 
@@ -23,10 +24,10 @@ for n_iter in range(100):
     s1 = torch.rand(1)  # value to keep
     s2 = torch.rand(1)
     # data grouping by `slash`
-    writer.add_scalar('data/scalar_systemtime', s1[0], n_iter)
+    writer.add_scalar(os.path.join("data", "scalar_systemtime"), s1[0], n_iter)
     # data grouping by `slash`
-    writer.add_scalar('data/scalar_customtime', s1[0], n_iter, walltime=n_iter)
-    writer.add_scalars('data/scalar_group', {"xsinx": n_iter * np.sin(n_iter),
+    writer.add_scalar(os.path.join("data", "scalar_customtime"), s1[0], n_iter, walltime=n_iter)
+    writer.add_scalars(os.path.join("data", "scalar_group"), {"xsinx": n_iter * np.sin(n_iter),
                                              "xcosx": n_iter * np.cos(n_iter),
                                              "arctanx": np.arctan(n_iter)}, n_iter)
     x = torch.rand(32, 3, 64, 64)  # output from network
@@ -56,15 +57,15 @@ for n_iter in range(100):
                                 precision,
                                 recall, n_iter)
 # export scalar data to JSON for external processing
-writer.export_scalars_to_json("../../Result/all_scalars.json")
+writer.export_scalars_to_json(os.path.join("..", "..", "Result", "all_scalars.json"))
 
-dataset = datasets.MNIST('../../Data/mnist', train=False, download=True)
+dataset = datasets.MNIST(os.path.join("..", "..", "Data", "mnist"), train=False, download=True)
 images = dataset.test_data[:100].float()
 label = dataset.test_labels[:100]
 features = images.view(100, 784)
 writer.add_embedding(features, metadata=label, label_img=images.unsqueeze(1))
 writer.add_embedding(features, global_step=1, tag='noMetadata')
-dataset = datasets.MNIST('../../Data/mnist', train=True, download=True)
+dataset = datasets.MNIST(os.path.join("..", "..", "Data", "mnist"), train=True, download=True)
 images_train = dataset.train_data[:100].float()
 labels_train = dataset.train_labels[:100]
 features_train = images_train.view(100, 784)
