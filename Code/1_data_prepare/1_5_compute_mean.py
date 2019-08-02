@@ -3,6 +3,7 @@
 import numpy as np
 import cv2
 import random
+import os
 
 """
     随机挑选CNum张图片，进行按通道计算均值mean和标准差std
@@ -10,7 +11,7 @@ import random
 """
 
 
-train_txt_path = '../../Data/train.txt'
+train_txt_path = os.path.join("..", "..", "Data/train.txt")
 
 CNum = 2000     # 挑选多少图片进行计算
 
