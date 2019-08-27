@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     for root, dirs, files in os.walk(dataset_dir):
         for sDir in dirs:
-            imgs_list = glob.glob(os.path.join(root, sDir) + '*.png')
+            imgs_list = glob.glob(os.path.join(root, sDir, '*.png'))
             random.seed(666)
             random.shuffle(imgs_list)
             imgs_num = len(imgs_list)
