@@ -39,7 +39,7 @@ if __name__ == '__main__':
                 if i < train_point:
                     out_dir = os.path.join(train_dir, sDir)
                 elif i < valid_point:
-                    out_dir = os.path.join(valid_dir + sDir)
+                    out_dir = os.path.join(valid_dir, sDir)
                 else:
                     out_dir = os.path.join(test_dir, sDir)
 
