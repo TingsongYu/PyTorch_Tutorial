@@ -32,3 +32,8 @@ https://pytorch.org/get-started/locally/
 2. 2.3小节删除注释；
 3. 修改权值初始化杂谈中的理解错误；
 4. 全文代码缩进。
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/TingsongYu/PyTorch_Tutorial.svg)](https://starchart.cc/TingsongYu/PyTorch_Tutorial)
