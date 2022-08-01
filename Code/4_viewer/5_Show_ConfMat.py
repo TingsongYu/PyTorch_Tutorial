@@ -42,5 +42,5 @@ def show_confMat(confusion_mat, classes_name, set_name, out_dir):
 
 if __name__ == '__main__':
 
-    print('QQ group: {} or {}, password: {}'.format(671103375, 773031536, 2018))
+    print('QQ group: {} or {} or {}, password: {}'.format(671103375, 773031536, 514974779, 2018))
 
