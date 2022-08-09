@@ -46,7 +46,7 @@ net = Net()     # 创建一个网络
 pretrained_dict = torch.load(os.path.join("..", "2_model", "net_params.pkl"))
 net.load_state_dict(pretrained_dict)
 
-writer = SummaryWriter(log_dir=os.path.join("..", ".." "Result", "visual_weights"))
+writer = SummaryWriter(log_dir=os.path.join("..", "..", "Result", "visual_weights"))
 params = net.state_dict()
 for k, v in params.items():
     if 'conv' in k and 'weight' in k:
