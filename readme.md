@@ -5,7 +5,7 @@
 本代码为教程——《Pytorch模型训练实用教程》中配套代码；<br/>
 《Pytorch模型训练实用教程》可通过如下方式获取：<br/>
 1. https://github.com/tensor-yu/PyTorch_Tutorial/tree/master/Data<br/>
-2. QQ群：671103375(已满) 773031536 <br/>
+2. QQ群： 四群：854620826  <br/>
 
 
 # 2.环境配置
@@ -30,7 +30,9 @@ https://pytorch.org/get-started/locally/
 
 ​	二群：773031536 (已满）<br/>
 
-​    三群：514974779
+​    三群：514974779 (已满）<br/>
+
+​    四群：854620826
 
 # 4.修改记录
 0.0.5：
