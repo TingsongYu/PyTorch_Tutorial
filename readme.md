@@ -1,5 +1,5 @@
 ﻿# Pytorch模型训练实用教程
-<img src="./Data/cover.png" alt="Image text" style="zoom:53%;" />
+<img src="./Data/cover.png" alt="Image text" style="zoom:33%;" />
 
 ---
 
@@ -57,7 +57,7 @@ https://pytorch.org/get-started/locally/
 
 如果本教程对你有帮助😀😀，请作者喝杯茶吧🍵🍵🥂🥂
 
-WeChat：<img src="https://github.com/TingsongYu/PyTorch_Tutorial/blob/master/Data/wechat.jpg?raw=ture" alt="wechat" style="zoom:30%;" />Alipay：<img src="https://github.com/TingsongYu/PyTorch_Tutorial/blob/master/Data/alipay.jpg?raw=true" alt="alipay" style="zoom:50%;" />
+WeChat：<img src="https://github.com/TingsongYu/PyTorch_Tutorial/blob/master/Data/wechat.jpg?raw=ture" alt="wechat" style="zoom:20%;" />Alipay：<img src="https://github.com/TingsongYu/PyTorch_Tutorial/blob/master/Data/alipay.jpg?raw=true" alt="alipay" style="zoom:50%;" />
 
 ---
 
