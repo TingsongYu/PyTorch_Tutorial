@@ -1,13 +1,15 @@
 ﻿# Pytorch模型训练实用教程
-![Image text](https://github.com/tensor-yu/PyTorch_Tutorial/blob/master/Data/cover.png)
+<img src="./Data/cover.png" alt="Image text" style="zoom:53%;" />
 
-📢📢📢：《PyTorch实用教程》（第二版）已发布并开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+---
 
-📢📢📢：《PyTorch实用教程》（第二版）已发布并开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+📢：《PyTorch实用教程》（第二版）已开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
 
-📢📢📢：《PyTorch实用教程》（第二版）已发布并开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+📢：《PyTorch实用教程》（第二版）已开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
 
-第二版新增丰富的深度学习应用案例和推理部署框架，包括CV、NLP和LLM的十多个实战项目，以及ONNX和TensorRT的教程。
+📢：《PyTorch实用教程》（第二版）已开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+
+第二版新增丰富的**深度学习应用案例**和**推理部署框架**，包括CV、NLP和LLM的十多个实战项目，以及ONNX和TensorRT的教程。
 
 # 1.简介
 
@@ -50,6 +52,16 @@ https://pytorch.org/get-started/locally/
 2. 2.3小节删除注释；
 3. 修改权值初始化杂谈中的理解错误；
 4. 全文代码缩进。
+
+---
+
+如果本教程对你有帮助😀😀，请作者喝杯茶吧🍵🍵🥂🥂
+
+![wechat](https://github.com/TingsongYu/PyTorch_Tutorial/blob/master/Data/wechat.jpg?raw=ture)
+
+![alipay](https://github.com/TingsongYu/PyTorch_Tutorial/blob/master/Data/alipay.jpg?raw=true)
+
+---
 
 
 ## Stargazers over time
