@@ -1,9 +1,19 @@
 ﻿# Pytorch模型训练实用教程
 ![Image text](https://github.com/tensor-yu/PyTorch_Tutorial/blob/master/Data/cover.png)
 
+📢📢📢：《PyTorch实用教程》（第二版）已发布并开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+
+📢📢📢：《PyTorch实用教程》（第二版）已发布并开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+
+📢📢📢：《PyTorch实用教程》（第二版）已发布并开源，欢迎阅读：https://tingsongyu.github.io/PyTorch-Tutorial-2nd/
+
+第二版新增丰富的深度学习应用案例和推理部署框架，包括CV、NLP和LLM的十多个实战项目，以及ONNX和TensorRT的教程。
+
 # 1.简介
+
 本代码为教程——《Pytorch模型训练实用教程》中配套代码；<br/>
 《Pytorch模型训练实用教程》可通过如下方式获取：<br/>
+
 1. https://github.com/tensor-yu/PyTorch_Tutorial/tree/master/Data<br/>
 2. QQ群： 四群：854620826  <br/>
 
