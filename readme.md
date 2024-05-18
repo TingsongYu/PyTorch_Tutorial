@@ -57,7 +57,7 @@ https://pytorch.org/get-started/locally/
 
 如果本教程对你有帮助😀😀，请作者喝杯茶吧🍵🍵🥂🥂
 
-WeChat：<img src="https://github.com/TingsongYu/PyTorch_Tutorial/raw/master/Data/wechat.jpg" style="width:20%;"/>               Alipay:<img src="https://github.com/TingsongYu/PyTorch_Tutorial/raw/master/Data/alipay.jpg" style="width:20%;"/>
+WeChat：<img src="https://img.picgo.net/2024/05/18/wechat2859fc4f155e9302.jpg" style="width:20%;"/>               Alipay:<img src="https://img.picgo.net/2024/05/18/alipayd96d6d0a325ef7e0.jpg" style="width:20%;"/>
 
 
 
