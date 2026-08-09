@@ -1,0 +1,45 @@
+name: Update star history chart
+
+on:
+  schedule:
+    # Every 7 days at 03:00 UTC (北京时间 11:00).
+    - cron: "0 3 */7 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: star-history
+  cancel-in-progress: false
+
+jobs:
+  update-chart:
+    # Avoid running this upstream-only maintenance task in forks.
+    if: github.repository == 'TingsongYu/PyTorch_Tutorial'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install matplotlib
+        run: pip install matplotlib
+
+      - name: Generate star history chart
+        run: python Code/utils/gen_star_history.py --refresh
+        env:
+          # STAR_HISTORY_TOKEN（细粒度 PAT）如存在则优先，否则用内置 GITHUB_TOKEN，
+          # 读取公开仓库的 stargazers 时间戳不需要额外权限。
+          GITHUB_TOKEN: ${{ secrets.STAR_HISTORY_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Commit updated charts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Data/star-history.png
+          git diff --cached --quiet && exit 0
+          git commit -m "Update star history chart [skip ci]"
+          git push

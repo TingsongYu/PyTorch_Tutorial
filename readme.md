@@ -1,4 +1,4 @@
-﻿# Pytorch模型训练实用教程
+# Pytorch模型训练实用教程
 <img src="./Data/cover.png" alt="Image text" style="zoom:33%;" />
 
 ---
@@ -68,6 +68,10 @@ WeChat：<img src="https://img.picgo.net/2024/05/18/wechat2859fc4f155e9302.jpg" 
 ---
 
 
-## Stargazers over time
+## ⭐ Star History
 
-[![Stargazers over time](https://starchart.cc/TingsongYu/PyTorch_Tutorial.svg)](https://starchart.cc/TingsongYu/PyTorch_Tutorial)
+<a href="https://star-history.com/#TingsongYu/PyTorch_Tutorial&Date">
+  <img alt="Star History Chart" src="Data/star-history.png" width="100%" />
+</a>
+
+<sub>由 [`Code/utils/gen_star_history.py`](Code/utils/gen_star_history.py) 生成，[GitHub Actions](.github/workflows/star-history.yml) 每 7 天自动更新 · 点击图片查看实时数据</sub>
