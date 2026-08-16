@@ -2,12 +2,16 @@
 """Render this repo's star history as a PNG image.
 
 Fetches stargazer timestamps from the GitHub REST API, drops everything
-before START_DATE, and draws a cumulative "stars over time" chart with a
-gradient fill. Output: Data/star-history.png
+before the repository creation date (or an optional --start-date), and
+draws a cumulative "stars over time" chart with a gradient fill.
+Output: Data/star-history.png
 
 Usage:
     python Code/utils/gen_star_history.py [--repo owner/name] [--refresh]
                                           [--start-date YYYY-MM-DD] [--out-dir DIR]
+
+By default the chart starts at the repository's creation date; use
+--start-date to override it.
 
 Auth: set GITHUB_TOKEN (or GH_TOKEN, or have an authenticated `gh` CLI).
 Unauthenticated requests work too but are rate-limited to 60/hour
@@ -26,6 +30,7 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from typing import Any
 
 import matplotlib
 
@@ -38,7 +43,6 @@ from matplotlib.colors import LinearSegmentedColormap, to_rgba
 from matplotlib.ticker import FuncFormatter
 
 REPO = "TingsongYu/PyTorch_Tutorial"
-START_DATE = "2024-04-27"  # UTC; stars before this date are excluded
 CACHE = Path(__file__).with_name(".star-history-cache.json")
 
 ACCENT = "#f5a623"  # warm amber, reads well on both light and dark
@@ -69,7 +73,7 @@ def get_token() -> str | None:
     return None
 
 
-def get_json(url: str, headers: dict, retries: int = 4) -> list:
+def get_json(url: str, headers: dict, retries: int = 4) -> Any:
     """Fetch JSON from url with retry on failure."""
     req = urllib.request.Request(url, headers=headers)
     for attempt in range(retries):
@@ -83,6 +87,26 @@ def get_json(url: str, headers: dict, retries: int = 4) -> list:
             print(f"request failed ({exc}); retrying in {wait}s...", file=sys.stderr)
             time.sleep(wait)
     return []  # unreachable
+
+
+def fetch_repo_created_at(repo: str) -> datetime:
+    """Return the repository creation timestamp (UTC)."""
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "gen-star-history",
+    }
+    if token := get_token():
+        headers["Authorization"] = f"Bearer {token}"
+
+    url = f"https://api.github.com/repos/{repo}"
+    data = get_json(url, headers)
+    created_at = data.get("created_at")
+    if not created_at:
+        raise ValueError(f"could not find created_at for repo {repo!r}")
+    return datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ").replace(
+        tzinfo=timezone.utc
+    )
 
 
 def fetch_starred_at(repo: str, refresh: bool) -> list[str]:
@@ -283,12 +307,19 @@ def main() -> None:
     """Parse arguments and generate the star history chart."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", default=REPO)
-    parser.add_argument("--start-date", default=START_DATE)
+    parser.add_argument(
+        "--start-date",
+        default=None,
+        help="chart start date (YYYY-MM-DD); defaults to repository creation date",
+    )
     parser.add_argument("--out-dir", default="Data")
     parser.add_argument("--refresh", action="store_true", help="ignore the timestamp cache")
     args = parser.parse_args()
 
-    start = datetime.strptime(args.start_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    if args.start_date:
+        start = datetime.strptime(args.start_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    else:
+        start = fetch_repo_created_at(args.repo)
     starred = fetch_starred_at(args.repo, refresh=args.refresh)
     x, y = build_series(starred, start)
 
